@@ -15,12 +15,12 @@ import static pl.training.payments.ports.model.PaymentStatus.CONFIRMED;
 public class RestGetPaymentUseCaseAdapter {
 
     private final GetPaymentUseCase getPaymentUseCase;
-    private final RestPaymentUseCaseMapper paymentMapper;
+    private final RestPaymentUseCaseMapper mapper;
 
     @GetMapping("{id}")
     public ResponseEntity<PaymentDto> getById(@PathVariable String id) {
         var payment = getPaymentUseCase.getById(id);
-        var paymentDto = paymentMapper.toDto(payment);
+        var paymentDto = mapper.toDto(payment);
         return ResponseEntity.ok(paymentDto);
     }
 
@@ -30,7 +30,7 @@ public class RestGetPaymentUseCaseAdapter {
             @RequestParam(required = false, defaultValue = "5") int pageSize) {
         var page = new Page(pageNumber, pageSize);
         var resultPage = getPaymentUseCase.getByStatus(CONFIRMED, page);
-        var resultPageDto = paymentMapper.toDto(resultPage);
+        var resultPageDto = mapper.toDto(resultPage);
         return ResponseEntity.ok(resultPageDto);
     }
 

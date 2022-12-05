@@ -17,13 +17,13 @@ import pl.training.payments.ports.input.ProcessPaymentUseCase;
 public class RestProcessPaymentUseCaseAdapter {
 
     private final ProcessPaymentUseCase processPaymentUseCase;
-    private final RestPaymentUseCaseMapper paymentMapper;
+    private final RestPaymentUseCaseMapper mapper;
 
     @PostMapping
     public ResponseEntity<PaymentDto> process(/*@Valid*/ @Validated(Extended.class) @RequestBody PaymentRequestDto paymentRequestDto) {
-        var paymentRequest = paymentMapper.toDomain(paymentRequestDto);
+        var paymentRequest = mapper.toDomain(paymentRequestDto);
         var payment = processPaymentUseCase.process(paymentRequest);
-        var paymentDto = paymentMapper.toDto(payment);
+        var paymentDto = mapper.toDto(payment);
         var locationUri = LocationUri.fromRequest(paymentDto.getId());
         return ResponseEntity.created(locationUri).body(paymentDto);
     }
