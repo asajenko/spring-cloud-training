@@ -35,3 +35,17 @@ Content-Type: application/json
     }
   ]
 }
+
+###
+// RestPlaceOrderUseCaseAdapter (uses RestOrderUseCaseMapper)
+// PlaceOrderUseCase
+// PlaceOrderService (uses PaymentsService->PaymentServiceAdapter)
+// ProcessPaymentUseCase
+// ProcessPaymentUseCaseAdapter (uses PaymentDomainMapper)
+// ProcessPaymentService (uses PaymentIdGenerator, PaymentFeeCalculator)
+// PaymentDomainWriter
+// PaymentWriterAdapter (uses PaymentDomainMapper)
+// PaymentWriter
+// JpaPaymentRepositoryAdapter (uses JpaPaymentRepositoryMapper)
+// JpaPaymentRepository
+

@@ -1,4 +1,4 @@
-package pl.training.shop.orders;
+package pl.training.shop.orders.adapters.payments;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,13 +15,13 @@ import java.util.Optional;
 public class PaymentServiceAdapter implements PaymentsService {
 
     private final ProcessPaymentUseCase processPaymentUseCase;
+    private final PaymentServiceMapper mapper;
 
     @Override
     public Optional<Payment> pay(BigDecimal value, String currency) {
-        var paymentValue = "%s %s".formatted(value, currency);
-        var paymentRequest = new PaymentRequest(1L, paymentValue);
+        var paymentRequest = mapper.toDomain(value, currency);
         var payment = processPaymentUseCase.process(paymentRequest);
-        return Optional.of(new Payment(payment.getId(), payment.getStatus().name()));
+        return Optional.of(mapper.toDomain(payment));
     }
 
 }
