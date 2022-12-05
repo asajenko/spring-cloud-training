@@ -1,4 +1,4 @@
-POST http://localhost:8080/api/payments
+POST http://localhost:10000/api/payments
 Accept: application/json
 Content-Type: application/json
 
@@ -9,19 +9,19 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/payments/2f318b81-0a60-4256-bdfb-21ce7694a804
+GET http://localhost:10000/api/payments/2f318b81-0a60-4256-bdfb-21ce7694a804
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/payments/confirmed?pageSize=2&pageNumber=0
+GET http://localhost:10000/api/payments/confirmed?pageSize=2&pageNumber=0
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/api/orders
+POST http://localhost:10000/api/orders
 Accept: application/json
 Content-Type: application/json
 
@@ -49,3 +49,18 @@ Content-Type: application/json
 // JpaPaymentRepositoryAdapter (uses JpaPaymentRepositoryMapper)
 // JpaPaymentRepository
 
+###
+
+GET http://localhost:8888/003-Base-components/application-default.yml
+
+###
+
+GET http://localhost:8888/003-Base-components/application-default.properties
+
+###
+
+GET http://localhost:8888/003-Base-components/application-development.yml
+
+###
+
+GET http://localhost:8888/003-Base-components/shop-service-development.yml
