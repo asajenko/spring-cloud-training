@@ -4,3 +4,6 @@ spring:
 logging:
   level:
     org.javamoney.moneta.FastMoney: OFF
+eureka:
+  client:
+    should-enforce-registration-at-init: true
