@@ -1,14 +1,5 @@
 server:
   port: 10000
-spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2
-  datasource:
-    url: jdbc:h2:file:./data/payments.db
-    username: admin
-    password: admin
 logging:
   level:
     #org.springframework.web.client.RestTemplate: DEBUG
