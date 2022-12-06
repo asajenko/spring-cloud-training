@@ -8,4 +8,4 @@ spring:
           uri: lb://SHOP-SERVICE
           filters:
             - RewritePath=/api/shop(?<segment>.*), $\{segment}
-            - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
+            - RewriteLocationResponseHeader=AS_IN_REQUEST, Location, http://localhost:8080/api/shop

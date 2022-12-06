@@ -11,7 +11,7 @@ import pl.training.payments.adapters.commons.validation.Extended;
 import pl.training.payments.adapters.commons.web.LocationUri;
 import pl.training.payments.ports.input.ProcessPaymentUseCase;
 
-@RequestMapping("api/payments")
+@RequestMapping("payments")
 @RestController
 @RequiredArgsConstructor
 public class RestProcessPaymentUseCaseAdapter {

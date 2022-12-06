@@ -1,6 +1,6 @@
 spring:
   application:
-    name: shop-service
+    name: gateway-server
   profiles:
     active: development
   config:

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.training.orders.ports.input.PlaceOrderUseCase;
 
-@RequestMapping("api/orders")
+@RequestMapping("orders")
 @RestController
 @RequiredArgsConstructor
 public class RestPlaceOrderUseCaseAdapter {

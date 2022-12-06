@@ -8,6 +8,6 @@ spring:
   cloud:
     config:
       label: 003-Base-components
-      fail-fast: true
+      #fail-fast: true
       #request-connect-timeout: 10
       #request-read-timeout: 10

@@ -9,7 +9,7 @@ import pl.training.payments.ports.model.Page;
 
 import static pl.training.payments.ports.model.PaymentStatus.CONFIRMED;
 
-@RequestMapping("api/payments")
+@RequestMapping("payments")
 @RestController
 @RequiredArgsConstructor
 public class RestGetPaymentUseCaseAdapter {
