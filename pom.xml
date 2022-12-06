@@ -20,8 +20,8 @@
         <module>orders-domain</module>
         <module>orders-adapters</module>
         <module>shop-service</module>
-        <module>discovery-server</module>
         <module>configuration-server</module>
+        <module>discovery-server</module>
     </modules>
 
 </project>
