@@ -9,7 +9,7 @@ spring:
     url: jdbc:h2:file:./data/payments.db
     username: admin
     password: admin
-  logging:
-    level:
-      org.springframework.web.client.RestTemplate: DEBUG
-      pl.training: DEBUG
+logging:
+  level:
+    org.springframework.web.client.RestTemplate: DEBUG
+    pl.training: DEBUG
