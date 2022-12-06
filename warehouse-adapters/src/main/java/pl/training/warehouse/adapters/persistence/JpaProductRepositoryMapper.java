@@ -1,8 +1,8 @@
-package pl.training.warehouse.adapters.persistence.jpa;
+package pl.training.warehouse.adapters.persistence;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import pl.training.warehouse.ports.Product;
+import pl.training.warehouse.ports.model.Product;
 
 @Mapper(componentModel = "spring")
 public interface JpaProductRepositoryMapper {

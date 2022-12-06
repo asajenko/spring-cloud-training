@@ -1,10 +1,10 @@
-package pl.training.warehouse.adapters.persistence.jpa;
+package pl.training.warehouse.adapters.persistence;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import pl.training.warehouse.ports.Product;
-import pl.training.warehouse.ports.ProductReader;
+import pl.training.warehouse.ports.model.Product;
+import pl.training.warehouse.ports.output.ProductReader;
 
 import java.util.Optional;
 

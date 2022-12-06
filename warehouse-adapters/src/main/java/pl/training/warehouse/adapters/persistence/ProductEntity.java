@@ -1,4 +1,4 @@
-package pl.training.warehouse.adapters.persistence.jpa;
+package pl.training.warehouse.adapters.persistence;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

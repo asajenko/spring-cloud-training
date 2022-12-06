@@ -1,4 +1,4 @@
-package pl.training.warehouse.adapters.persistence.jpa;
+package pl.training.warehouse.adapters.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package pl.training.warehouse.ports;
+package pl.training.warehouse.ports.model;
 
 import lombok.Value;
 
@@ -7,6 +7,6 @@ public class Product {
 
     Long id;
     String name;
-    Double price;
+    double price;
 
 }

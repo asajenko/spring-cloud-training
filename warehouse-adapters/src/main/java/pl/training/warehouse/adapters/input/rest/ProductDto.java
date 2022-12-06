@@ -1,4 +1,4 @@
-package pl.training.warehouse.adapters.rest;
+package pl.training.warehouse.adapters.input.rest;
 
 import lombok.Data;
 
@@ -7,6 +7,6 @@ public class ProductDto {
 
     private Long id;
     private String name;
-    private Double price;
+    private double price;
 
 }
