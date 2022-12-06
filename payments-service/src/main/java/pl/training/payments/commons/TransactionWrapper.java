@@ -1,4 +1,4 @@
-package pl.training.shop.commons.aop;
+package pl.training.payments.commons;
 
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -10,7 +10,7 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import pl.training.commons.aop.Atomic;
 
-import static pl.training.shop.commons.aop.Annotations.findAnnotation;
+import static pl.training.payments.commons.Annotations.findAnnotation;
 
 @Aspect
 @Component

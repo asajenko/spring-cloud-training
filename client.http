@@ -1,4 +1,4 @@
-POST http://localhost:10000/payments
+POST http://localhost:10002/payments
 Accept: application/json
 Content-Type: application/json
 
@@ -9,13 +9,13 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:10000/payments/2f318b81-0a60-4256-bdfb-21ce7694a804
+GET http://localhost:10002/payments/2f318b81-0a60-4256-bdfb-21ce7694a804
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-GET http://localhost:10000/payments/confirmed?pageSize=2&pageNumber=0
+GET http://localhost:10002/payments/confirmed?pageSize=2&pageNumber=0
 Accept: application/json
 Content-Type: application/json
 
@@ -70,17 +70,6 @@ GET http://localhost:8888/003-Base-components/shop-service-development.yml
 
 ###
 
-POST http://localhost:8080/api/shop/payments
-Accept: application/json
-Content-Type: application/json
-
-{
-  "requestId": 1,
-  "value": "200 PLN"
-}
-
-###
-
 POST http://localhost:8080/api/shop/orders
 Accept: application/json
 Content-Type: application/json
@@ -94,12 +83,6 @@ Content-Type: application/json
     }
   ]
 }
-
-###
-
-GET http://localhost:8080/api/shop/payments/50fd8062-5e48-48e2-834e-ef59ec770414
-Accept: application/json
-Content-Type: application/json
 
 ###
 

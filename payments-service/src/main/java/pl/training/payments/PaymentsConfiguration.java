@@ -1,15 +1,17 @@
-package pl.training.shop.payments;
+package pl.training.payments;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import pl.training.payments.domain.servcie.DefaultPaymentServiceFactory;
-import pl.training.payments.ports.*;
+import pl.training.payments.ports.PaymentServiceFactory;
 import pl.training.payments.ports.input.GetPaymentUseCase;
 import pl.training.payments.ports.input.ProcessPaymentUseCase;
 import pl.training.payments.ports.output.PaymentReader;
 import pl.training.payments.ports.output.PaymentWriter;
 import pl.training.payments.ports.output.TimeProvider;
 
+@EnableJpaRepositories
 @Configuration
 public class PaymentsConfiguration {
 

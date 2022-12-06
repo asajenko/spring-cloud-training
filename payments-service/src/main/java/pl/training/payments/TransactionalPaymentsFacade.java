@@ -1,10 +1,6 @@
-package pl.training.shop.payments;
+package pl.training.payments;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pl.training.payments.ports.input.GetPaymentUseCase;
 import pl.training.payments.ports.input.ProcessPaymentUseCase;
 import pl.training.payments.ports.model.*;
