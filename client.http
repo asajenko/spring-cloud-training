@@ -51,6 +51,10 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8888/shop-service/development/003-Base-components
+
+###
+
 GET http://localhost:8888/003-Base-components/application-default.yml
 
 ###

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: shop-service
+    name: discovery-server
   profiles:
     active: development
   config:
