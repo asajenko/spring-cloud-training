@@ -4,3 +4,5 @@ spring:
     generate-ddl: true
   messages:
     basename: exceptions
+api:
+  products: http://WAREHOUSE-SERVICE/products
