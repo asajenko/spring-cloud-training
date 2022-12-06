@@ -7,3 +7,5 @@ logging:
 eureka:
   client:
     should-enforce-registration-at-init: true
+  instance:
+    prefer-ip-address: true
