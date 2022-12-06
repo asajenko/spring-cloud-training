@@ -96,3 +96,10 @@ Content-Type: application/json
     }
   ]
 }
+
+###
+
+GET http://localhost:8080/api/shop/payments/50fd8062-5e48-48e2-834e-ef59ec770414
+Accept: application/json
+Content-Type: application/json
+
