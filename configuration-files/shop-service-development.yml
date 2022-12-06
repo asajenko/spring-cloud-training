@@ -12,4 +12,9 @@ spring:
 logging:
   level:
     #org.springframework.web.client.RestTemplate: DEBUG
-    #pl.training: DEBUG
+    pl.training: DEBUG
+feign:
+  client:
+    config:
+      products:
+        logger-level: BASIC
