@@ -11,3 +11,6 @@ spring:
       #fail-fast: true
       #request-connect-timeout: 10
       #request-read-timeout: 10
+#eureka:
+#  instance:
+#    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
