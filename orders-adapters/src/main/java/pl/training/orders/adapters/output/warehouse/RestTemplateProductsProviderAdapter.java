@@ -28,7 +28,7 @@ public class RestTemplateProductsProviderAdapter implements ProductsProvider {
     @Override
     public Optional<Product> getById(Long id) {
         try {
-            var productDto = restTemplate.getForObject("%s/$d".formatted(productsApi, id), ProductDto.class);
+            var productDto = restTemplate.getForObject("%s/%d".formatted(productsApi, id), ProductDto.class);
             return Optional.ofNullable(productDto)
                     .map(mapper::toDomain);
         } catch (RestClientException restClientException) {
