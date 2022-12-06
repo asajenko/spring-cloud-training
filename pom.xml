@@ -20,6 +20,10 @@
         <module>orders-domain</module>
         <module>orders-adapters</module>
         <module>shop-service</module>
+        <module>warehouse-ports</module>
+        <module>warehouse-domain</module>
+        <module>warehouse-adapters</module>
+        <module>warehouse-service</module>
         <module>configuration-server</module>
         <module>discovery-server</module>
         <module>gateway-server</module>
