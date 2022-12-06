@@ -16,5 +16,5 @@ logging:
 feign:
   client:
     config:
-      products:
+      default:
         logger-level: BASIC
