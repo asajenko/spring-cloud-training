@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import pl.training.orders.domain.service.ConstantDiscountCalculator;
 import pl.training.orders.domain.service.DiscountCalculator;
 import pl.training.orders.domain.service.PlaceOrderService;
 import pl.training.orders.ports.input.PlaceOrderUseCase;
@@ -19,9 +20,9 @@ public class OrdersConfiguration {
 
     @RefreshScope
     @Bean
-    public DiscountCalculator discountCalculator(@Value("discount")BigDecimal value) {
+    public DiscountCalculator discountCalculator(@Value("discount") BigDecimal value) {
         log.info("Refreshing discount calculator");
-        return new DiscountCalculator(value);
+        return new ConstantDiscountCalculator(value);
     }
 
     @Bean
