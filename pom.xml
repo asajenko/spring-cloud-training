@@ -25,6 +25,7 @@
         <module>warehouse-domain</module>
         <module>warehouse-adapters</module>
         <module>warehouse-service</module>
+        <module>broker-service</module>
         <module>configuration-server</module>
         <module>discovery-server</module>
         <module>gateway-server</module>
