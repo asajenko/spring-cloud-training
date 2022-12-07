@@ -109,3 +109,10 @@ Content-Type: application/json
 {
   "value": "222 PLN"
 }
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=shop-service
