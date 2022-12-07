@@ -5,18 +5,11 @@ spring:
     admin:
       client:
         url: http://localhost:8090
-#  zipkin:
-#    baseUrl: http://localhost:9411
-#  sleuth:
-#    sampler:
-#      probability: 1
+  zipkin:
+    baseUrl: http://localhost:9411
   sleuth:
-    otel:
-      config:
-        trace-id-ratio-based: 1.0
-      exporter:
-        otlp:
-          endpoint: http://localhost:4317
+    sampler:
+      probability: 1
 eureka:
   client:
     serviceUrl:

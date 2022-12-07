@@ -14,4 +14,3 @@ spring:
 #eureka:
 #  instance:
 #    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
-otel
