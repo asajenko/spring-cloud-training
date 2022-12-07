@@ -20,6 +20,7 @@ public class PlaceOrderService implements PlaceOrderUseCase {
 
     private final PaymentsService paymentsService;
     private final ProductsProvider productsProvider;
+    private final DiscountCalculator discountCalculator;
 
     @Override
     public void place(Order order) {
@@ -28,7 +29,9 @@ public class PlaceOrderService implements PlaceOrderUseCase {
                 .map(productsProvider::getById)
                 .map(Optional::get)
                 .map(Product::getPrice)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .subtract(discountCalculator.getGetValue());
+
         log.info("Processing new Order with value %s %s".formatted(totalValue, DEFAULT_CURRENCY));
         paymentsService.pay(totalValue, DEFAULT_CURRENCY)
                 .ifPresent(payment -> log.info("Payment processed with status: " + payment));
