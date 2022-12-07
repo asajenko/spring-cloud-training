@@ -20,7 +20,7 @@ public class OrdersConfiguration {
 
     @RefreshScope
     @Bean
-    public DiscountCalculator discountCalculator(@Value("discount") BigDecimal value) {
+    public DiscountCalculator discountCalculator(@Value("${discount}") BigDecimal value) {
         log.info("Refreshing discount calculator");
         return new ConstantDiscountCalculator(value);
     }
