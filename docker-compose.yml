@@ -46,6 +46,8 @@ services:
       logstash -f /etc/logstash/conf.d/logstash.conf
     volumes:
       - ./configuration-files/logstash.conf:/etc/logstash/conf.d/logstash.conf
+    ports:
+      - "5000:5000"
   kibana-server:
     image: docker.elastic.co/kibana/kibana:7.14.1
     restart: always
