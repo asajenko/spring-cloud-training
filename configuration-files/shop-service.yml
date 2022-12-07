@@ -1,3 +1,28 @@
+spring:
+  cloud:
+    #function:
+    #  definition: productsListener
+    stream:
+      bindings:
+        productsListener-in-0:
+          destination: products-events
+          group: shop
+#    stream:
+#      bindings:
+#        productsListener-in-0:
+#          destination: products-events
+#          group: shop
+#          binder: kafka1
+#      binders:
+#        kafka1:
+#          type: kafka
+#          environment:
+#            spring:
+#              cloud:
+#                stream:
+#                  kafka:
+#                    binder:
+#                      brokers: localhost:9092
 api:
   products: http://WAREHOUSE-SERVICE/products
   payments: http://PAYMENTS-SERVICE/payments
