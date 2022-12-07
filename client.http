@@ -70,6 +70,10 @@ GET http://localhost:8888/003-Base-components/shop-service-development.yml
 
 ###
 
+GET http://localhost:8888/008-Reactive/broker-service-development.yml
+
+###
+
 POST http://localhost:8080/api/shop/orders
 Accept: application/json
 Content-Type: application/json
