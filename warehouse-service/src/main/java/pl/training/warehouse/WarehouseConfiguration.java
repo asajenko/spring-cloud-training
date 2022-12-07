@@ -16,8 +16,11 @@ import pl.training.warehouse.domain.adapters.ProductDomainMapper;
 import pl.training.warehouse.domain.adapters.input.GetProductUseCaseAdapter;
 import pl.training.warehouse.domain.adapters.output.ProductReaderAdapter;
 import pl.training.warehouse.domain.service.GetProductService;
+import pl.training.warehouse.domain.service.UpdateProductsPricesService;
 import pl.training.warehouse.ports.input.GetProductUseCase;
+import pl.training.warehouse.ports.input.UpdateProductsPricesUseCase;
 import pl.training.warehouse.ports.output.ProductReader;
+import pl.training.warehouse.ports.output.ProductsEventsPublisher;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
@@ -39,6 +42,11 @@ public class WarehouseConfiguration implements WebMvcConfigurer {
         var productReaderAdapter = new ProductReaderAdapter(productReader, productDomainMapper);
         var productServer = new GetProductService(productReaderAdapter);
         return new GetProductUseCaseAdapter(productServer, productDomainMapper);
+    }
+
+    @Bean
+    public UpdateProductsPricesUseCase updateProductsPricesUseCase(ProductsEventsPublisher productsEventsPublisher) {
+        return new UpdateProductsPricesService(productsEventsPublisher);
     }
 
     @Override
