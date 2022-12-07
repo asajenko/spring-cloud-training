@@ -1,6 +1,6 @@
 $(() => {
 
-    const socket = new WebSocket('ws://localhost:9000/ratings');
+    const socket = new WebSocket('ws://localhost:10003/ratings');
     const rating = $('#rating');
 
     socket.onopen = () => {

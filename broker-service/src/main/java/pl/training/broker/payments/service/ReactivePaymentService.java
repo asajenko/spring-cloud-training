@@ -14,7 +14,6 @@ import javax.annotation.PostConstruct;
 @RequiredArgsConstructor
 public class ReactivePaymentService {
 
-
     private static final int CACHE_SIZE = 10;
 
     private final PaymentRepository paymentRepository;
