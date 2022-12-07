@@ -7,16 +7,4 @@ spring:
     import: optional:configserver:http://localhost:8888
   cloud:
     config:
-      label: 010-Reactive-services
-
-
-server:
-  port: 9000
-spring:
-  data:
-    mongodb:
-      port: 27017
-      username: admin
-      password: admin
-      database: broker-payments
-      authentication-database: admin
+      label: 008-Reactive
