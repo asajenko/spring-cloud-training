@@ -3,6 +3,7 @@ package pl.training.orders.adapters.output.warehouse;
 import feign.FeignException.FeignClientException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import pl.training.orders.ports.model.GetProductFailedException;
@@ -20,6 +21,7 @@ public class FeignProductsProviderAdapter implements ProductsProvider {
     private final ProductsApi productsApi;
     private final WarehouseProductMapper mapper;
 
+    @Cacheable("products")
     @Override
     public Optional<Product> getById(Long id) {
         try {

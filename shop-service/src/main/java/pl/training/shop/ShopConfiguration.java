@@ -1,6 +1,11 @@
 package pl.training.shop;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +17,7 @@ import pl.training.shop.warehouse.ProductEventMessage;
 
 import java.util.function.Consumer;
 
+@EnableCaching
 @EnableFeignClients("pl.training")
 @Configuration
 @Log
@@ -32,10 +38,30 @@ public class ShopConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    public Consumer<ProductEventMessage> productsListener() {
-        return productEventMessage -> {
+    public CacheManager cacheManager() {
+        return new ConcurrentMapCacheManager("products");
+    }
+
+    @Bean
+    public Consumer<ProductEventMessage> productsListener(CacheManager cacheManager) {
+        /*return productEventMessage -> {
             log.info("New message: " + productEventMessage);
-        };
+        };*/
+        return new ProductsListener(cacheManager.getCache("products"));
+    }
+
+    @RequiredArgsConstructor
+    class ProductsListener implements Consumer<ProductEventMessage> {
+
+        private final Cache cache;
+
+        @Override
+        public void accept(ProductEventMessage productEventMessage) {
+            log.info("New message: " + productEventMessage);
+            log.info("Clearing cache...");
+            cache.clear();
+        }
+
     }
 
 }
