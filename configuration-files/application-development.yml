@@ -1,6 +1,10 @@
 spring:
   jackson:
     default-property-inclusion: always
+  boot:
+    admin:
+      client:
+        url: http://localhost:8090
 eureka:
   client:
     serviceUrl:
