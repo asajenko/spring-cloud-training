@@ -54,12 +54,17 @@ services:
       ELASTICSEARCH_URL: http://elastic-server:9300
     ports:
       - "5601:5601"
-  zipkin-server:
-    image: openzipkin/zipkin
-    ports:
-      - "9411:9411"
+  #zipkin-server:
+  #  image: openzipkin/zipkin
+  #  ports:
+  #    - "9411:9411"
     # 1) wsl -d docker-desktop
     # 2) sysctl -w vm.max_map_count=262144
+  jaeger-server:
+    image: jaegertracing/all-in-one
+    restart: always
+    ports:
+      - "16686:16686"
   alertmanager-server:
     image: prom/alertmanager
     restart: always
