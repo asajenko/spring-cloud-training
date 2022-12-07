@@ -70,6 +70,7 @@ services:
     restart: always
     ports:
       - "9093:9093"
+      - "6831:6831"
     volumes:
       - ./configuration-files/alertmanager.yml:/etc/prometheus/alertmanager.yml
   prometheus-server:
