@@ -77,6 +77,7 @@ GET http://localhost:8888/008-Reactive/broker-service-development.yml
 POST http://localhost:8080/api/shop/orders
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "orderId": 1,
@@ -134,3 +135,50 @@ POST http://localhost:8888/decrypt
 Content-Type: text/plain
 
 795d50819d0711b36830de579828f7ab0b98b01f4a574fa2de6107a4dc264b6f
+
+###
+
+//@no-cookie-jar
+//@no-redirect
+POST http://localhost:8100/realms/shop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=cloud&grant_type=password&username=marek&password=123
+
+> {% client.global.set("token", response.body.access_token) %}
+
+###
+
+//@no-cookie-jar
+//@no-redirect
+POST http://localhost:8100/realms/shop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=cloud&grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwMDgxNmMyZC00NzcyLTRiOGQtOTJlZi1jOTNlNDAzYTRiODcifQ.eyJleHAiOjE2NzA0OTYzNzIsImlhdCI6MTY3MDQ5NDU3MiwianRpIjoiMzEyNjc5NTQtZWNjZC00ZDQ5LTg0ZDItNDJlZThmZDUxMDVkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTAwL3JlYWxtcy9zaG9wIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MTAwL3JlYWxtcy9zaG9wIiwic3ViIjoiMGMxYjllM2UtODg5Zi00N2FjLTkwMDctYmUzYWZlOTg5YTQ3IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImNsb3VkIiwic2Vzc2lvbl9zdGF0ZSI6IjVkYjYwNjAzLTMzNmUtNDUzNS04ZTc0LWQzYmM4MzMxMDJlZiIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjVkYjYwNjAzLTMzNmUtNDUzNS04ZTc0LWQzYmM4MzMxMDJlZiJ9.8QuWrAUI35rUj0hAcVrNW42LgG0eea8qBpB32boOlLo
+
+> {% client.global.set("token", response.body.access_token) %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
