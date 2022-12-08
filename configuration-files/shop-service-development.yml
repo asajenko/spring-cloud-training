@@ -15,6 +15,7 @@ feign:
     config:
       default:
         logger-level: HEADERS
+cors:
   origin: http://localhost:4200
   headers: "*"
   methods: "*"
