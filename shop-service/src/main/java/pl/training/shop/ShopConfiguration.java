@@ -5,6 +5,7 @@ import lombok.extern.java.Log;
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -18,6 +19,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import pl.training.shop.commons.security.RestTemplateTokenInterceptor;
 import pl.training.shop.warehouse.ProductEventMessage;
 
 import java.util.function.Consumer;
@@ -39,7 +41,9 @@ public class ShopConfiguration implements WebMvcConfigurer {
     @LoadBalanced
     @Bean
     public RestTemplate restTemplate() {
-        return new RestTemplate();
+        return new RestTemplateBuilder()
+                .additionalInterceptors(new RestTemplateTokenInterceptor())
+                .build();
     }
 
     @Bean

@@ -14,8 +14,7 @@ feign:
   client:
     config:
       default:
-        logger-level: BASIC
-cors:
+        logger-level: HEADERS
   origin: http://localhost:4200
   headers: "*"
   methods: "*"
