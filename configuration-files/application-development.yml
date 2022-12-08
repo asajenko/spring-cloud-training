@@ -24,3 +24,4 @@ keycloak:
   resource: cloud
   public-client: true
   auth-server-url: http://localhost:8100
+apiPath: /**
