@@ -4,6 +4,6 @@ spring:
   cloud:
     config:
       label: 012-Docker
-      #fail-fast: true
+      fail-fast: true
       #request-connect-timeout: 10
       #request-read-timeout: 10

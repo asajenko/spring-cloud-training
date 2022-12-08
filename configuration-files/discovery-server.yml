@@ -2,6 +2,5 @@ server:
   port: 8761
 eureka:
   client:
-    should-enforce-registration-at-init: false
     registerWithEureka: false #standalone
     fetchRegistry: false #standalone
