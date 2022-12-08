@@ -78,8 +78,8 @@ services:
       - "9411:9411"
     # 1) wsl -d docker-desktop
     # 2) sysctl -w vm.max_map_count=262144
-  warehouse-server:
-    image: training/warehouse-server
+  warehouse-service:
+    image: training/warehouse-service
     restart: always
     environment:
       PROFILE: production
