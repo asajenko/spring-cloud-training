@@ -5,3 +5,20 @@ services:
     restart: always
     environment:
       SERVER_PORT: 8090
+  zookeeper-server:
+    image: wurstmeister/zookeeper
+    restart: always
+  kafka-server:
+    image: wurstmeister/kafka
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka-server
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-server:2181
+  configuration-server:
+    image: training/configuration-server
+    restart: always
+    environment:
+      PORT: 8888
+      GIT_URI: https://github.com/landrzejewski/spring-cloud-training
+      KAFKA_BROKERS: kafka-server
+    ports:
+      - "8888:8888"

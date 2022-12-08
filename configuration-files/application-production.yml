@@ -1,0 +1,20 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://admin-server:8090
+  zipkin:
+    baseUrl: http://zipkin-server:9411
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+keycloak:
+  realm: shop
+  resource: cloud
+  public-client: true
+  auth-server-url: http://keycloak-server:8080
+apiPath: /**
