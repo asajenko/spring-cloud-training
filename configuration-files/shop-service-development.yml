@@ -15,3 +15,8 @@ feign:
     config:
       default:
         logger-level: BASIC
+cors:
+  origin: http://localhost:4200
+  headers: "*"
+  methods: "*"
+apiPath: /orders/**
