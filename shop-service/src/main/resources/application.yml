@@ -11,3 +11,5 @@ spring:
       #fail-fast: true
       #request-connect-timeout: 10
       #request-read-timeout: 10
+encrypt:
+  key: summwitockey
