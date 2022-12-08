@@ -60,8 +60,6 @@ services:
       - "9411:9411"
     # 1) wsl -d docker-desktop
     # 2) sysctl -w vm.max_map_count=262144
-    depends_on:
-      - jaeger-all-in-one
   alertmanager-server:
     image: prom/alertmanager
     restart: always
