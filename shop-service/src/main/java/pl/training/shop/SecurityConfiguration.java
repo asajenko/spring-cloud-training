@@ -11,9 +11,6 @@ import pl.training.shop.commons.security.BaseSecurityConfiguration;
 @KeycloakConfiguration
 public class SecurityConfiguration extends BaseSecurityConfiguration {
 
-    @Autowired
-    private RequestMatcher apiMatcher;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);

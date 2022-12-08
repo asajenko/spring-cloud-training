@@ -1,8 +1,11 @@
 package pl.training.shop.commons.security;
 
+import org.keycloak.adapters.KeycloakConfigResolver;
+import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationEntryPoint;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
@@ -20,6 +23,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.List;
 
 public class BaseSecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter {
+
+    @Autowired
+    protected RequestMatcher apiMatcher;
 
     @Override
     protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
@@ -41,7 +47,7 @@ public class BaseSecurityConfiguration extends KeycloakWebSecurityConfigurerAdap
 
     @Override
     protected AuthenticationEntryPoint authenticationEntryPoint() throws Exception {
-        return new KeycloakAuthenticationEntryPoint(adapterDeploymentContext(), apiMatcher());
+        return new KeycloakAuthenticationEntryPoint(adapterDeploymentContext(), apiMatcher);
     }
 
     @Bean
@@ -57,6 +63,11 @@ public class BaseSecurityConfiguration extends KeycloakWebSecurityConfigurerAdap
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
+    }
+
+    @Bean
+    public KeycloakConfigResolver keycloakConfigResolver() {
+        return new KeycloakSpringBootConfigResolver();
     }
 
 }
