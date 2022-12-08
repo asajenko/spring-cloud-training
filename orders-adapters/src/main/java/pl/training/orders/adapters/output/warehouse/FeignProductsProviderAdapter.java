@@ -1,6 +1,7 @@
 package pl.training.orders.adapters.output.warehouse;
 
 import feign.FeignException.FeignClientException;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
@@ -22,7 +23,8 @@ public class FeignProductsProviderAdapter implements ProductsProvider {
     private final ProductsApi productsApi;
     private final WarehouseProductMapper mapper;
 
-    @Retry(name = "products", fallbackMethod = "getByIdFallback")
+    @CircuitBreaker(name = "products", fallbackMethod = "getByIdFallback")
+    //@Retry(name = "products", fallbackMethod = "getByIdFallback")
     //@Cacheable("products")
     @Override
     public Optional<Product> getById(Long id) {
