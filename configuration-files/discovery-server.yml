@@ -3,3 +3,5 @@ server:
 eureka:
   client:
     should-enforce-registration-at-init: true
+    registerWithEureka: false #standalone
+    fetchRegistry: false #standalone
