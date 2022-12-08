@@ -27,7 +27,7 @@ services:
     image: training/discovery-server
     restart: always
     environment:
-      PROFILE: production
+      PROFILE: development
       CONFIGURATION_SERVER: optional:configserver:http://configuration-server:8888
     ports:
       - "8761:8761"
