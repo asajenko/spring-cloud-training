@@ -1,5 +1,6 @@
 spring:
   datasource:
+    url: jdbc:postgresql://postgres-server:5432/shop
     username: admin
     password: admin
   cloud:
