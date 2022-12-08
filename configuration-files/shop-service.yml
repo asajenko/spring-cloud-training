@@ -27,3 +27,17 @@ api:
   products: http://WAREHOUSE-SERVICE/products
   payments: http://PAYMENTS-SERVICE/payments
 discount: "{cipher}795d50819d0711b36830de579828f7ab0b98b01f4a574fa2de6107a4dc264b6f"
+resilience4j:
+  retry:
+    instance:
+      products:
+        maxRetryAttempts: 3
+        waitDuration: 5000
+        retry-exception:
+          - java.lang.Exception
+  circuitbreaker:
+    instance:
+      waitDurationInOpenState: 10s
+      products:
+        retry-exception:
+          - java.lang.Exception
