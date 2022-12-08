@@ -12,7 +12,6 @@ USER $USERNAME
 COPY target/discovery-server.jar /home/$USERNAME
 WORKDIR /home/$USERNAME
 CMD java -jar \
-    -Dserver.port=$PORT \
     -Dspring.profiles.active=$PROFILE \
     -Dspring.config.import=$CONFIGURATION_SERVER \
     discovery-server.jar
