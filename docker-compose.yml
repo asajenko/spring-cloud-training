@@ -20,14 +20,12 @@ services:
       PORT: 8888
       GIT_URI: https://github.com/landrzejewski/spring-cloud-training
       KAFKA_BROKERS: kafka-server
-      ENCRYPT_KEY: summwitrckeq
+      ENCRYPT_KEY: summwitockey
     ports:
       - "8888:8888"
   discovery-server:
     image: training/discovery-server
     restart: always
     environment:
-      PROFILE: development
+      PROFILE: production
       CONFIGURATION_SERVER: optional:configserver:http://configuration-server:8888
-    ports:
-      - "8761:8761"
