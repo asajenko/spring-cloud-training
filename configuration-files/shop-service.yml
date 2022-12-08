@@ -26,4 +26,4 @@ spring:
 api:
   products: http://WAREHOUSE-SERVICE/products
   payments: http://PAYMENTS-SERVICE/payments
-discount: 15.0
+discount: "{cipher}795d50819d0711b36830de579828f7ab0b98b01f4a574fa2de6107a4dc264b6f"

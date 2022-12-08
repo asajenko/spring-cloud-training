@@ -120,3 +120,17 @@ path=shop-service
 ###
 
 POST http://localhost:10000/actuator/refresh
+
+###
+
+POST http://localhost:8888/encrypt
+Content-Type: text/plain
+
+15
+
+###
+
+POST http://localhost:8888/decrypt
+Content-Type: text/plain
+
+795d50819d0711b36830de579828f7ab0b98b01f4a574fa2de6107a4dc264b6f
