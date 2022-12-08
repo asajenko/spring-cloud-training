@@ -9,9 +9,9 @@ RUN groupadd --gid $GUID $USERNAME \
     && chown -R $UID:$GUID /home/$USERNAME
 
 USER $USERNAME
-COPY target/warehouse-server.jar /home/$USERNAME
+COPY target/warehouse-service.jar /home/$USERNAME
 WORKDIR /home/$USERNAME
 CMD java -jar \
     -Dspring.profiles.active=$PROFILE \
     -Dspring.config.import=$CONFIGURATION_SERVER \
-    warehouse-server.jar
+    warehouse-service.jar
