@@ -134,12 +134,6 @@ services:
       - "3000:3000"
     volumes:
       - ./configuration-files/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
-  registry-server:
-    image: registry
-    restart: always
-    container_name: registry
-    ports:
-      - "6000:5000"
   portainer:
     image: portainer/portainer-ce
     restart: always
