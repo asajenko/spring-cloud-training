@@ -44,10 +44,12 @@ public class ShopConfiguration implements WebMvcConfigurer {
 
     @Bean
     public Consumer<ProductEventMessage> productsListener(CacheManager cacheManager) {
-        /*return productEventMessage -> {
+        return productEventMessage -> {
             log.info("New message: " + productEventMessage);
-        };*/
-        return new ProductsListener(cacheManager.getCache("products"));
+            log.info("Clearing cache...");
+            cacheManager.getCache("products").clear();
+        };
+       // return new ProductsListener(cacheManager.getCache("products"));
     }
 
     @RequiredArgsConstructor
