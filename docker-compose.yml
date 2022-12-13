@@ -7,7 +7,7 @@ services:
   kafka-server:
     image: wurstmeister/kafka
     depends_on:
-      - zookeeper
+      - zookeeper-server
     ports:
       - "9092:9092"
     environment:
