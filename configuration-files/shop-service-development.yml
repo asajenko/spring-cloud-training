@@ -11,7 +11,7 @@ spring:
     password: admin
 logging:
   level:
-    #org.springframework.web.client.RestTemplate: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
     pl.training: DEBUG
 feign:
   client:

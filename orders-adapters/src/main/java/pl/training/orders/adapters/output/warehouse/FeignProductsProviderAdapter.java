@@ -11,7 +11,7 @@ import pl.training.orders.ports.output.ProductsProvider;
 
 import java.util.Optional;
 
-@Primary
+//@Primary
 @Component
 @Log
 @RequiredArgsConstructor
