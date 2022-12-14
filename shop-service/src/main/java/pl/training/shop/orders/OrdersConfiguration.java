@@ -18,11 +18,18 @@ import java.math.BigDecimal;
 @Log
 public class OrdersConfiguration {
 
+    int count = 1;
+
     @RefreshScope
     @Bean
     public DiscountCalculator discountCalculator(@Value("${discount}") BigDecimal value) {
         log.info("Refreshing discount calculator");
-        return new ConstantDiscountCalculator(value);
+        if (count == 1) {
+            count++;
+            return new ConstantDiscountCalculator(value);
+        } else {
+          return null;
+        }
     }
 
     @Bean
