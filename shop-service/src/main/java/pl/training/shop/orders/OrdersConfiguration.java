@@ -28,7 +28,7 @@ public class OrdersConfiguration {
             count++;
             return new ConstantDiscountCalculator(value);
         } else {
-          return null;
+          throw new IllegalArgumentException();
         }
     }
 
