@@ -1,10 +1,10 @@
 spring:
   jackson:
     default-property-inclusion: always
-  boot:
-    admin:
-      client:
-        url: http://localhost:8090
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8090
   zipkin:
     baseUrl: http://localhost:9411
   sleuth:
