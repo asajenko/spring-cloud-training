@@ -105,8 +105,7 @@ services:
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      DB_VENDOR: "POSTGRES"
-      DB_ADDR: "postgres-server"
-      DB_USER: "admin"
-      DB_PASSWORD: "admin"
-      DB_DATABASE: "shop"
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres-server:5432/shop
+      KC_DB_USERNAME: admin
+      KC_DB_PASSWORD: admin
