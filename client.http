@@ -30,7 +30,7 @@ Content-Type: application/json
   "entries": [
     {
       "productId": 1,
-      "quantity": 4
+      "quantity": 152900
     }
   ]
 }
